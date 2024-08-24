@@ -20,5 +20,5 @@ jobs:
             cd ~/apps/Deploying_Multiple_Node_App_002 &&
             git pull origin main &&
             npm install && npm run build &&
-            pm2 restart Node_App_002 || pm2 start npm --name "Node_App_002" -- start && pm2 save
+            pm2 stop Node_App_002 || pm2 delete Node_App_002;  pm2 start npm --name "Node_App_002" -- start && pm2 save
           '
